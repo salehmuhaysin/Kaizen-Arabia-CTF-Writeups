@@ -48,21 +48,21 @@ From this the only thing that is interesting the fake flag and word “RE4LLY!!�
 Here we can see the changed highlighted “53414643”, and then the next instruction “mov     _GLOBAL_OFFSET_TABLE_, 0” will overwrite it with zeros.
 All next functions do the same, XOR the content of the given parameter and then after the call it overwrite it. I collected the result of every function before overwriting, the results combined as following:
 
-> 53414643
+    53414643
 
-> 53507b30
+    53507b30
 
-> 6f485f53
+    6f485f53
 
-> 65454d73
+    65454d73
 
-> 5f53306d
+    5f53306d
 
-> 45304e65
+    45304e65
 
-> 5f50774e
+    5f50774e
 
-> 5f6d457d
+    5f6d457d
 
 From what it looks like it seems an ASCII test in HEX format, and using tools or online web sites (like.rapidtables.com) to convert HEX to ASCII, the result will be the flag which is:
 
