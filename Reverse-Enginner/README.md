@@ -1,4 +1,5 @@
-#Introduction:
+# Intoduction:
+
 During the Kaizen Arabia CTF, I found interesting challenge (Little F0rt) under Reverse Engineering category, which request for a flag starting with the format “SAFCSP{}” in a given executable called “Bombs_Landed”
 
 ##Step \#1: Strings
@@ -7,7 +8,7 @@ First thing of course starting with the strings of the executable file, I found 
 But unfortunately it was not the correct flag. 
 
 
-##Step \#2: Type of the file
+## Step \#2: Type of the file
 To reverse executable file, first we need to know its type, using Kali command I found that it is ELF 64-bit executable file for Linux Operating System: 
  
 And for that I used IDA Pro Linux server to start debugging it remotely.
@@ -15,7 +16,7 @@ And for that I used IDA Pro Linux server to start debugging it remotely.
 And then from Windows machine, I used IDA Pro remotely to execute Bombs_Landed executable and start debugging it.
 
 
-##Step \#3: Debugging:
+## Step \#3: Debugging:
 I Did some tracing with the execution until if found a strange behavior, there was four functions with name end with XOR, and after each call for those functions it overwrites one of the parameters passed to that function, I realized that it could be manipulating the content of that parameter and then overwrite the new result (which is what every function of those functions did).
 The following graph for each one of these functions:
     
