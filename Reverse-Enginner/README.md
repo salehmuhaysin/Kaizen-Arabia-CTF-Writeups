@@ -28,10 +28,10 @@ And then from Windows machine, I used IDA Pro remotely to execute Bombs_Landed e
 I Did some tracing with the execution until if found a strange behavior, there was four functions with name end with XOR, and after each call for those functions it overwrites one of the parameters passed to that function, I realized that it could be manipulating the content of that parameter and then overwrite the new result (which is what every function of those functions did).
 The following graph for each one of these functions:
 
-     ![alt text](https://i.imgur.com/SUvMPzl.png)
-     ![alt text](https://i.imgur.com/YiNq49B.png)
-     ![alt text](https://i.imgur.com/qx0rybU.png)
-     ![alt text](https://i.imgur.com/DfqdxIA.png)
+![alt text](https://i.imgur.com/SUvMPzl.png)
+![alt text](https://i.imgur.com/YiNq49B.png)
+![alt text](https://i.imgur.com/qx0rybU.png)
+![alt text](https://i.imgur.com/DfqdxIA.png)
      
 What is important is not what the functions do, but what are the results of them, so I set a breakpoint after each call of these functions:
  
@@ -47,14 +47,23 @@ From this the only thing that is interesting the fake flag and word “RE4LLY!!�
  
 Here we can see the changed highlighted “53414643”, and then the next instruction “mov     _GLOBAL_OFFSET_TABLE_, 0” will overwrite it with zeros.
 All next functions do the same, XOR the content of the given parameter and then after the call it overwrite it. I collected the result of every function before overwriting, the results combined as following:
-•	53414643
-•	53507b30
-•	6f485f53
-•	65454d73
-•	5f53306d
-•	45304e65
-•	5f50774e
-•	5f6d457d
+*
+53414643
+
+53507b30
+
+6f485f53
+
+65454d73
+
+5f53306d
+
+45304e65
+
+5f50774e
+
+5f6d457d
+*
 From what it looks like it seems an ASCII test in HEX format, and using tools or online web sites (like.rapidtables.com) to convert HEX to ASCII, the result will be the flag which is:
 
 SAFCSP{0oH_SeEMs_S0mE0Ne_PwN_mE}
