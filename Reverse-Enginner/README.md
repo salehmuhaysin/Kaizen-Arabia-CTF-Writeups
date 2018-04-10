@@ -2,7 +2,7 @@
 
 During the Kaizen Arabia CTF, I found interesting challenge (Little F0rt) under Reverse Engineering category, which request for a flag starting with the format “SAFCSP{}” in a given executable called “Bombs_Landed”
 
-##Step \#1: Strings
+## Step \#1: Strings
 First thing of course starting with the strings of the executable file, I found a string with thet given flag format:
  
 But unfortunately it was not the correct flag. 
