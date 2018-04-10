@@ -4,14 +4,22 @@ During the Kaizen Arabia CTF, I found interesting challenge (Little F0rt) under 
 
 ## Step \#1: Strings
 First thing of course starting with the strings of the executable file, I found a string with thet given flag format:
- 
+
+![alt text](https://imgur.com/BHJvM24)
+
 But unfortunately it was not the correct flag. 
 
 
 ## Step \#2: Type of the file
 To reverse executable file, first we need to know its type, using Kali command I found that it is ELF 64-bit executable file for Linux Operating System: 
  
+ ![alt text](https://imgur.com/ifL41RB)
+
+ 
 And for that I used IDA Pro Linux server to start debugging it remotely.
+ 
+ ![alt text](https://imgur.com/0B1Wuuq)
+
  
 And then from Windows machine, I used IDA Pro remotely to execute Bombs_Landed executable and start debugging it.
 
@@ -19,7 +27,10 @@ And then from Windows machine, I used IDA Pro remotely to execute Bombs_Landed e
 ## Step \#3: Debugging:
 I Did some tracing with the execution until if found a strange behavior, there was four functions with name end with XOR, and after each call for those functions it overwrites one of the parameters passed to that function, I realized that it could be manipulating the content of that parameter and then overwrite the new result (which is what every function of those functions did).
 The following graph for each one of these functions:
-    
+     ![alt text](https://imgur.com/0B1Wuuq)
+     ![alt text](https://imgur.com/0B1Wuuq)
+     ![alt text](https://imgur.com/0B1Wuuq)
+     ![alt text](https://imgur.com/0B1Wuuq)
 What is important is not what the functions do, but what are the results of them, so I set a breakpoint after each call of these functions:
  
 And since the executable overwrite every parameter it passes to the function, using the Hex view on the address 0x0000000000600248 (which is the address of _GLOBAL_OFFSET_TABLE_):
