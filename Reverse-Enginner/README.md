@@ -45,7 +45,7 @@ From this the only thing that is interesting the fake flag and word “RE4LLY!!�
  
   ![alt text](https://i.imgur.com/WingRJx.png)
  
-Here we can see the changed highlighted “53414643”, and then the next instruction “mov     _GLOBAL_OFFSET_TABLE_, 0” will overwrite it with zeros.
+Here we can see the changed highlighted “53414643”, and then the next instruction “mov     \_GLOBAL_OFFSET_TABLE\_, 0” will overwrite it with zeros.
 All next functions do the same, XOR the content of the given parameter and then after the call it overwrite it. I collected the result of every function before overwriting, the results combined as following:
 
     53414643
