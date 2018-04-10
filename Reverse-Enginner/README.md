@@ -37,7 +37,7 @@ What is important is not what the functions do, but what are the results of them
  
  ![alt text](https://i.imgur.com/zQlhHBX.png)
  
-And since the executable overwrite every parameter it passes to the function, using the Hex view on the address 0x0000000000600248 (which is the address of _GLOBAL_OFFSET_TABLE_):
+And since the executable overwrite every parameter it passes to the function, using the Hex view on the address 0x0000000000600248 (which is the address of **\_GLOBAL_OFFSET_TABLE\_**):
  
   ![alt text](https://i.imgur.com/buOjTx9.png)
  
@@ -45,7 +45,8 @@ From this the only thing that is interesting the fake flag and word “RE4LLY!!�
  
   ![alt text](https://i.imgur.com/WingRJx.png)
  
-Here we can see the changed highlighted “53414643”, and then the next instruction “mov     \_GLOBAL_OFFSET_TABLE\_, 0” will overwrite it with zeros.
+Here we can see the changed highlighted “**53414643**”, and then the next instruction “**mov     \_GLOBAL_OFFSET_TABLE\_, 0**” will overwrite it with zeros.
+
 All next functions do the same, XOR the content of the given parameter and then after the call it overwrite it. I collected the result of every function before overwriting, the results combined as following:
 
     53414643
@@ -59,9 +60,9 @@ All next functions do the same, XOR the content of the given parameter and then 
 
 From what it looks like it seems an ASCII test in HEX format, and using tools or online web sites (like.rapidtables.com) to convert HEX to ASCII, the result will be the flag which is:
 
-> SAFCSP{0oH_SeEMs_S0mE0Ne_PwN_mE}
+> **SAFCSP{0oH_SeEMs_S0mE0Ne_PwN_mE}**
 
-Note: some results of the functions will be more than 4 bytes; you need take only the last four bytes of the edited bytes.
+**Note**: some results of the functions will be more than 4 bytes; you need take only the last four bytes of the edited bytes.
 
 Conclusion:
 This idea of this challenge, it writes the Hex value of the flag on the memory and then overwrite it, and it use XOR to not be clear on the strings result and confuse with the fake flag. Also, we can see that it uses some system function’s names (like heapalloc, writememory) so that you may not notice that it contains the important data. Another way to solve this without debugging is by extracting the content of the functions parameter and perform manual XOR instead of making the debugger execute it for you.
