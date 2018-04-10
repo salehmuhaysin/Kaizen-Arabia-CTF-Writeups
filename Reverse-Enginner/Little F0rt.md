@@ -64,7 +64,7 @@ From what it looks like it seems an ASCII test in HEX format, and using tools or
 
 **Note**: some results of the functions will be more than 4 bytes; you need take only the last four bytes of the edited bytes.
 
-Conclusion:
+# Conclusion:
 This idea of this challenge, it writes the Hex value of the flag on the memory and then overwrite it, and it use XOR to not be clear on the strings result and confuse with the fake flag. Also, we can see that it uses some system function’s names (like heapalloc, writememory) so that you may not notice that it contains the important data. Another way to solve this without debugging is by extracting the content of the functions parameter and perform manual XOR instead of making the debugger execute it for you.
 
 I hope this explain how I solved this challenge.
