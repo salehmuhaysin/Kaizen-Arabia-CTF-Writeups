@@ -69,23 +69,27 @@ Let’s start with the first block, and with all the next blocks I did the same.
 
 Here we can see that it compares the character “**f**” from the given secret key with “**r**” and then if it
 is different it will print “**Try Again**” and stop the executable. Before it stores the character into
-**eax** register, I will replace the value “**f**” in address “**\[ebp+var_1F+1\]**” with the value “r” (using
-the Hex view), which will make the compression correct. After that continue with all the next
+**eax** register, I will replace the value “**f**” in address “**\[ebp+var_1F+1\]**” with the value “**r**” (using
+the _Hex view_), which will make the compression correct. After that continue with all the next
 compression with the same steps (check what is the correct character of the secret key and then
-replace it in the test key “0123456789abcdef”).
+replace it in the test key “_0123456789abcdef_”).
 So the sequence will be as following:
-0123456789abcdef
-The test secret key.
-0Q2B4f638La7cger
-After the first 8 comparisons blocks
-jQKBpf53WLs7XgAr
-After the last comparison block.
-Finally, we test the secret key we got (jQKBpf53WLs7XgAr) as input to the “Back to Basics”
-executable.
+
+------------------------------------------------------------
+0123456789abcdef | The test secret key.
+0Q2B4f638La7cger | After the first 8 comparisons blocks
+jQKBpf53WLs7XgAr | After the last comparison block.
+------------------------------------------------------------
+
+Finally, we test the secret key we got (**jQKBpf53WLs7XgAr**) as input to the “**Back to Basics**” executable.
+
 The flag is the secret code:
-jQKBpf53WLs7XgAr
-Conclusion:
-In this write-up we solved the Kaizen Arabia CTF called “Back to Basics”, in general first we
+
+> jQKBpf53WLs7XgAr
+
+# Conclusion:
+
+In this write-up we solved the Kaizen Arabia CTF called “**Back to Basics**”, in general first we
 started with basics overview of the Linux 32-bit executable, then found the length of the secret
 code it requires, finally traced the execution of the comparison of the characters to find the correct
 code.
