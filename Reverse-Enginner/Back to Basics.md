@@ -1,6 +1,6 @@
 ### Author: Saleh Bin Muhaysin
-### Email: (SalehMuhaysin@gmail.com)[SalehMuhaysin@gmail.com]
-### Link: (Github.com)[https://github.com/salehmuhaysin]
+### Email: [SalehMuhaysin@gmail.com](SalehMuhaysin@gmail.com)
+### Link: [Github.com](https://github.com/salehmuhaysin)
 
 # Introduction:
 
