@@ -62,8 +62,8 @@ So the sequence will be as following:
 
 | 0123456789abcdef  | The test secret key.  |
 | ------------ | ------------ |
-| 0Q2B4f638La7cger  |  After the first 8 comparisons blocks  |
-| jQKBpf53WLs7XgAr  | After the last comparison block.  |
+| 0```Q```2```B```4```f```6```3```8```L```a```7```c```g```e```r```   |  After the first 8 comparisons blocks  |
+| ```j```Q```K```B```p```f```5```3```W```L```s```7```X```g```A```r  | After the last comparison block.  |
 
 
 Finally, we test the secret key we got (**jQKBpf53WLs7XgAr**) as input to the “**Back to Basics**” executable.
