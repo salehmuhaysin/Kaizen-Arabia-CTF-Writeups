@@ -1,6 +1,6 @@
 ### Author: Saleh Bin Muhaysin
-### Email: [SalehMuhaysin@gmail.com](SalehMuhaysin@gmail.com)
-### Link: [Github.com](https://github.com/salehmuhaysin)
+#### Email: [SalehMuhaysin@gmail.com](SalehMuhaysin@gmail.com)
+#### Link: [Github.com](https://github.com/salehmuhaysin)
 
 # Introduction:
 
@@ -14,11 +14,11 @@ its serial number?”*
 So what we want is the serial number of the executable.
 
 
-# Step 1 – Overview:
+## Step 1 – Overview:
 
 As usual I started with the “**strings**” results, but unfortunately nothing interesting except:
 
-
+![alt text](https://i.imgur.com/BHJvM24.png)
 
 This is an indication that the executable may ask for a secret code and check it against the correct
 secret code and return “You Win !” if it is correct. Let’s see what is the type of the file:
