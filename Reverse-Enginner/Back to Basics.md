@@ -67,9 +67,9 @@ Let’s start with the first block, and with all the next blocks I did the same.
 ![alt text](https://image.ibb.co/gBUrgc/9.png)
 
 
-Here we can see that it compares the character “f” from the given secret key with “r” and then if it
-is different it will print “Try Again” and stop the executable. Before it stores the character into
-eax register, I will replace the value “f” in address “[ebp+var_1F+1]” with the value “r” (using
+Here we can see that it compares the character “**f**” from the given secret key with “**r**” and then if it
+is different it will print “**Try Again**” and stop the executable. Before it stores the character into
+**eax** register, I will replace the value “**f**” in address “**\[ebp+var_1F+1\]**” with the value “r” (using
 the Hex view), which will make the compression correct. After that continue with all the next
 compression with the same steps (check what is the correct character of the secret key and then
 replace it in the test key “0123456789abcdef”).
