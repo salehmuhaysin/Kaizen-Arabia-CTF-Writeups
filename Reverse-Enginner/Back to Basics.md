@@ -54,12 +54,20 @@ the secret key “_0123456789abcdef_”, then set a breakpoint after the for-loo
 From there we can see that all the following blocks check the given secret code character by
 character if it is correct or not, if all characters correct it print the message “**You Win !**”
 
+![alt text](https://image.ibb.co/d4zrgc/7.png)
 
 
 To get the correct secret code, in each block I check the comparison and see what is the current
-character of my test secret code and what is the character it compares it with, and then change my
-test secret code in memory to match the character of the correct secret code. Let’s start with the
-first block, and with all the next blocks I did the same.Here we can see that it compares the character “f” from the given secret key with “r” and then if it
+character of my test secret code and what is the character it compare it with, and then change my
+test secret code in memory to match the character of the correct secret code. 
+
+Let’s start with the first block, and with all the next blocks I did the same.
+
+![alt text](https://image.ibb.co/nanzZx/8.png)
+![alt text](https://image.ibb.co/gBUrgc/9.png)
+
+
+Here we can see that it compares the character “f” from the given secret key with “r” and then if it
 is different it will print “Try Again” and stop the executable. Before it stores the character into
 eax register, I will replace the value “f” in address “[ebp+var_1F+1]” with the value “r” (using
 the Hex view), which will make the compression correct. After that continue with all the next
