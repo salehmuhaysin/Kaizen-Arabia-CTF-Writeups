@@ -60,8 +60,9 @@ Let’s start with the first block, and with all the next blocks I did the same.
 Here we can see that it compares the character “**f**” from the given secret key with “**r**” and then if it is different it will print “**Try Again**” and stop the executable. Before it stores the character into **eax** register, I will replace the value “**f**” in address “**\[ebp+var_1F+1\]**” with the value “**r**” (using the _Hex view_), which will make the compression correct. After that continue with all the next compression with the same steps (check what is the correct character of the secret key and then replace it in the test key “_0123456789abcdef_”).
 So the sequence will be as following:
 
+| secret key in memory | description |
+| - | ------------ |
 | 0123456789abcdef  | The test secret key.  |
-| ------------ | ------------ |
 | 0```Q```2```B```4```f```6```3```8```L```a```7```c```g```e```r```   |  After the first 8 comparisons blocks  |
 | ```j```Q```K```B```p```f```5```3```W```L```s```7```X```g```A```r  | After the last comparison block.  |
 
