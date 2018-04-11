@@ -21,7 +21,7 @@ As usual I started with the “**strings**” results, but unfortunately nothing
 ![alt text](https://image.ibb.co/nE3TSH/1.png)
 
 This is an indication that the executable may ask for a secret code and check it against the correct
-secret code and return “**You Win !**\” if it is correct. Let’s see what is the type of the file:
+secret code and return “**You Win !**” if it is correct. Let’s see what is the type of the file:
 
 ![alt text](https://preview.ibb.co/ezSYux/2.png)
 
@@ -52,7 +52,7 @@ the secret key “_0123456789abcdef_”, then set a breakpoint after the for-loo
 ![alt text](https://preview.ibb.co/jwXcMc/6.png)
 
 From there we can see that all the following blocks check the given secret code character by
-character if it is correct or not, if all characters correct it print the message “**You Win !**\”
+character if it is correct or not, if all characters correct it print the message “**You Win !**”
 
 
 
