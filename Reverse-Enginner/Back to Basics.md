@@ -18,22 +18,45 @@ So what we want is the serial number of the executable.
 
 As usual I started with the “**strings**” results, but unfortunately nothing interesting except:
 
-![alt text](https://i.imgur.com/BHJvM24.png)
+![alt text](https://image.ibb.co/nE3TSH/1.png)
 
 This is an indication that the executable may ask for a secret code and check it against the correct
-secret code and return “You Win !” if it is correct. Let’s see what is the type of the file:
-Here we can see that the file is ELF 32-bit which is a Linux executable, when you run it on 64-bit
+secret code and return “**You Win !**\” if it is correct. Let’s see what is the type of the file:
+
+![alt text](https://preview.ibb.co/ezSYux/2.png)
+
+Here we can see that the file is **ELF 32-bit** which is a Linux executable, when you run it on **64-bit**
 Operating system it will not work and give the following error message:
-So, we have to run it under 32-bit operating system to be executed correctly.Step 2 – Analysis:
+
+![alt text](https://preview.ibb.co/kZWF7H/3.png)
+
+So, we have to run it under **32-bit** operating system to be executed correctly.
+
+
+
+## Step 2 – Analysis:
+
 I usually start with decompiled code of the main function looking for anything interesting, luckily
-there some interesting points to look at:
-In first two points (1 and 2), it asks the user to enter a secret code with maximum length 17
-characters including the final null character. And then in point 3 it checks every character in the
-given secret code if less than 0xF (16) characters (not including the final null character) print error
-message “The code length is wrong” (point 4) then exit.
-From this we can conclude that the secret key is exactly 16 characters, and for testing I will use
-the secret key “0123456789abcdef”, then set a breakpoint after the for loop:From there we can see that all the following blocks check the given secret code character by
-character if it is correct or not, if all characters correct it print the message “You Win !”To get the correct secret code, in each block I check the comparison and see what is the current
+there are some interesting points to look at:
+
+![alt text](https://image.ibb.co/hNOTSH/5.png)
+
+In first two points (**1** and **2**), it asks the user to enter a secret code with maximum length **17**
+characters including the final null character. And then in point **3** it checks every character in the
+given secret code, if its length less than **0xF** (16) characters (not including the final null character) print error
+message “_The code length is wrong_” (point **4**) then exit.
+
+From this we can conclude that the secret key is exactly **16** characters, and for testing I will use
+the secret key “_0123456789abcdef_”, then set a breakpoint after the for-loop:
+
+![alt text](https://preview.ibb.co/jwXcMc/6.png)
+
+From there we can see that all the following blocks check the given secret code character by
+character if it is correct or not, if all characters correct it print the message “**You Win !**\”
+
+
+
+To get the correct secret code, in each block I check the comparison and see what is the current
 character of my test secret code and what is the character it compares it with, and then change my
 test secret code in memory to match the character of the correct secret code. Let’s start with the
 first block, and with all the next blocks I did the same.Here we can see that it compares the character “f” from the given secret key with “r” and then if it
