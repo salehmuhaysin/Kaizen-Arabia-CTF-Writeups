@@ -1,15 +1,25 @@
 ### Author: Saleh Bin Muhaysin
-### Email: SalehMuhaysin@gmail.com
-### Link: https://github.com/salehmuhaysin
-Introduction:
-In this write up I will write how I solved the challenge called “Back to Basics” in Kaizen Arabia
-CTF which belongs to Reverse Engineering category. The request of the challenge as following:
-“Olympic City recently hired a developer to build a software for smart grids. The software needs
+### Email: (SalehMuhaysin@gmail.com)[SalehMuhaysin@gmail.com]
+### Link: (Github.com)[https://github.com/salehmuhaysin]
+
+# Introduction:
+
+In this write up I will write how I solved the challenge called “**Back to Basics**” in Kaizen Arabia
+CTF which belongs to _Reverse Engineering_ category. The request of the challenge as following:
+
+*“Olympic City recently hired a developer to build a software for smart grids. The software needs
 to be activated using a serial number. However, it seems that the software is sloppy. Can you crack
-its serial number?”
+its serial number?”*
+
 So what we want is the serial number of the executable.
-Step 1 – Overview:
-As usual I started with the “strings” results, but unfortunately nothing interesting except
+
+
+# Step 1 – Overview:
+
+As usual I started with the “**strings**” results, but unfortunately nothing interesting except:
+
+
+
 This is an indication that the executable may ask for a secret code and check it against the correct
 secret code and return “You Win !” if it is correct. Let’s see what is the type of the file:
 Here we can see that the file is ELF 32-bit which is a Linux executable, when you run it on 64-bit
