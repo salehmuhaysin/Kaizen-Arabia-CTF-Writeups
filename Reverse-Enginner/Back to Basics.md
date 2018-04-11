@@ -75,11 +75,11 @@ compression with the same steps (check what is the correct character of the secr
 replace it in the test key “_0123456789abcdef_”).
 So the sequence will be as following:
 
-------------------------------------------------------------
+----------------- | ----------------
 0123456789abcdef | The test secret key.
 0Q2B4f638La7cger | After the first 8 comparisons blocks
 jQKBpf53WLs7XgAr | After the last comparison block.
-------------------------------------------------------------
+----------------- | ----------------
 
 Finally, we test the secret key we got (**jQKBpf53WLs7XgAr**) as input to the “**Back to Basics**” executable.
 
